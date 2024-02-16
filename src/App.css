@@ -1,0 +1,22 @@
+/* App.css */
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.passport {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.passport h2 {
+  margin-bottom: 10px;
+}
+
+.passport p {
+  margin: 5px 0;
+}

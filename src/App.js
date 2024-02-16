@@ -1,11 +1,14 @@
-import './App.css';
+import React from 'react';
+import Passport from './components/Passport';
 
-function App() {
+
+const App = () => {
+
+
   return (
-    <div className="App">
-      a
-    </div>
+    <Passport>
+    </Passport>
   );
-}
+};
 
 export default App;
