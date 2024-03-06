@@ -25,7 +25,7 @@ const useStyles = makeStyles({
       },
     timelineContent: {
         width: '50vw',
-        height: '20vh',
+        height: '80px',
         maxWidth: '400px',
         maxHeight: '300px',
 
@@ -38,29 +38,37 @@ const useStyles = makeStyles({
           height: '40vh',
         },
       },
+      timelineDot: {
+        background: 'red',
+      }
     
   });
 
 const TimelineComponent = () => {
     const data = [
       {
-        time: '2023-11-01',
-        title: 'Início do projeto',
+        // time: '2023-11-01',
+        title: 'Venda para o cliente',
         description: 'Definição dos objetivos e planejamento inicial.'
       },
       {
-        time: '2023-12-15',
-        title: 'Desenvolvimento da plataforma',
+        // time: '2023-12-15',
+        title: 'Envio para a Loja',
         description: 'Implementação das funcionalidades e testes.'
       },
       {
-        time: '2024-01-31',
-        title: 'Lançamento do passaporte digital',
+        // time: '2024-01-31',
+        title: 'Confecção do produto',
         description: 'Disponibilização do passaporte para os usuários.'
       },
       {
-        time: '2024-03-31',
-        title: 'Evolução e aprimoramento',
+        // time: '2024-03-31',
+        title: 'Origem da matéria prima - Fibras / Fiação',
+        description: 'Implementação de novas funcionalidades e melhorias.'
+      },
+      {
+        // time: '2024-03-31',
+        title: 'Origem da matéria prima - Fibras / Fiação',
         description: 'Implementação de novas funcionalidades e melhorias.'
       }
     ];

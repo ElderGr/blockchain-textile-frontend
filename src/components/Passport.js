@@ -40,8 +40,8 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
           </Paper>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}>
-            <Typography variant="h5">Jornada do produto</Typography>
+          <Typography variant="h5">Jornada do produto</Typography>
+          {/* <Paper className={classes.paper}>
             <ul>
               <li>Início: 03/08/2023</li>
               <li>Origem da matéria prima - Fibras/Fiação</li>
@@ -51,10 +51,11 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
               <li>Envio para loja</li>
               <li>Venda para o cliente</li>
             </ul>
-          </Paper>
+          </Paper> */}
+          <TimelineComponent></TimelineComponent>
         </Grid>
       </Grid>
-      <TimelineComponent></TimelineComponent>
+      
     </div>
   );
 }
