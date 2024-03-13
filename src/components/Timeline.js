@@ -9,6 +9,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import { makeStyles } from '@material-ui/core/styles';
 
 
+
 const useStyles = makeStyles({
     timeline: {
       backgroundColor: '#f5f5f5',
@@ -30,7 +31,14 @@ const useStyles = makeStyles({
         maxHeight: '300px',
 
         padding: '10px',
-      marginLeft: '20px',
+        marginLeft: '20px',
+
+        border: "1px solid white",
+        background: "white",
+        display: "flex",
+        alignItems: "center",
+        flexWrap: "wrap",
+        alignContent: 'center',
     
         // Media queries para responsividade
         '@media (max-width: 767px)': {
@@ -39,37 +47,51 @@ const useStyles = makeStyles({
         },
       },
       timelineDot: {
-        background: 'red',
+        // background: 'red !important',
+      },
+      timelineConnector: {
+        backgroundImage: 'linear-gradient(to bottom, black 20px, transparent 8px) !important',
+        backgroundSize: '100% 30px !important',
+        background: 'transparent !important'
       }
     
   });
 
 const TimelineComponent = () => {
+  // Cria um state para estilizar a cor do dot da timeline
+  const [colorDotItem, setColorDotItem] = React.useState('gray');
+
     const data = [
       {
         // time: '2023-11-01',
         title: 'Venda para o cliente',
-        description: 'Definição dos objetivos e planejamento inicial.'
+        description: 'Definição dos objetivos e planejamento inicial.',
+        color: "green"
       },
       {
         // time: '2023-12-15',
         title: 'Envio para a Loja',
-        description: 'Implementação das funcionalidades e testes.'
+        description: 'Implementação das funcionalidades e testes.',
+        color: "orange"
       },
       {
         // time: '2024-01-31',
         title: 'Confecção do produto',
-        description: 'Disponibilização do passaporte para os usuários.'
+        description: 'Disponibilização do passaporte para os usuários.',
+        color: "blue"
       },
       {
         // time: '2024-03-31',
         title: 'Origem da matéria prima - Fibras / Fiação',
-        description: 'Implementação de novas funcionalidades e melhorias.'
+        description: 'Implementação de novas funcionalidades e melhorias.',
+        color: colorDotItem
       },
       {
         // time: '2024-03-31',
         title: 'Origem da matéria prima - Fibras / Fiação',
-        description: 'Implementação de novas funcionalidades e melhorias.'
+        description: 'Implementação de novas funcionalidades e melhorias.',
+        color: colorDotItem
+        
       }
     ];
 
@@ -85,8 +107,8 @@ const TimelineComponent = () => {
         {data.map((item, index) => (
           <TimelineItem key={index} className={classes.timelineItem}>
             <TimelineSeparator>
-              <TimelineDot />
-              <TimelineConnector />
+              <TimelineDot className={classes.timelineDot} style={{background: item.color}} />
+              <TimelineConnector className={classes.timelineConnector} />
             </TimelineSeparator>
               <TimelineContent>
                 <div className={classes.timelineContent}>
