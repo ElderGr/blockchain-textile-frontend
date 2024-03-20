@@ -1,13 +1,16 @@
 import React from 'react';
 import Passport from './components/Passport';
+import { Container } from '@mui/material';
 
 
 const App = () => {
 
 
   return (
-    <Passport>
-    </Passport>
+    <Container fixed>
+      <Passport>
+      </Passport>
+    </Container>
   );
 };
 
