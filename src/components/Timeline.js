@@ -23,6 +23,8 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        border: "2px solid",
+
       },
     timelineContent: {
         width: '50vw',
@@ -53,6 +55,14 @@ const useStyles = makeStyles({
         backgroundImage: 'linear-gradient(to bottom, black 20px, transparent 8px) !important',
         backgroundSize: '100% 30px !important',
         background: 'transparent !important'
+      },
+      date: {
+        fontSize: '12px',
+        color: 'gray',
+        display: 'flex',
+        justifyContent: '',
+        alignItems: 'center',
+        marginTop: '10px',
       }
     
   });
@@ -104,6 +114,8 @@ const TimelineComponent = () => {
   
     return (
         <Timeline className={classes.timeline}>
+        <span className={classes.date}>Finalizado: 03/08/2023</span>
+
         {data.map((item, index) => (
           <TimelineItem key={index} className={classes.timelineItem}>
             <TimelineSeparator>
@@ -119,6 +131,7 @@ const TimelineComponent = () => {
             
           </TimelineItem>
         ))}
+        <span className={classes.date}>Inicio: 03/08/2023</span>
       </Timeline>
     );
   };
