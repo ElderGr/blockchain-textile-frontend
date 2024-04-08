@@ -17,6 +17,15 @@ const useStyles = makeStyles({
     background: '#f5f5f5',
     padding: 16,
   },
+  productDetailsContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  productDetails: {
+    marginLeft: '20px',
+  }
+  
 });
 
 const Passport = ({ productName, productColor, composition, environmentalImpact }) => {
@@ -31,15 +40,20 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
         <Grid item xs={12} sm={6}>
           <div className={classes.paper}>
             <Typography variant="h5">Detalhes do produto</Typography>
+            <div className={classes.productDetailsContainer}>
             <img src={produtoImage} alt="Imagem do produto" style={{ maxWidth: '200px' }} />
-            <Typography>Produto: Calça Jeans</Typography>
-            <Typography>Cor: Azul claro</Typography>
-            <Typography>Composição:</Typography>
+            <div className={classes.productDetails}>
+
+            <Typography><b>Produto:</b> Calça Jeans</Typography>
+            <Typography><b>Cor:</b> Azul claro</Typography>
+            <Typography><b>Composição:</b></Typography>
             <ul>
               <li>80% Polyester</li>
               <li>10% Nylon</li>
               <li>10% Algodão reciclável</li>
             </ul>
+            </div>
+            </div>
             <Typography variant="h6">Índice de Impacto Ambiental: {indiceImpactoAmbiental}</Typography>
           </div>
         </Grid>
