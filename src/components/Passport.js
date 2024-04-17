@@ -3,6 +3,12 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import produtoImage from '../produto.jpg';
+import rankA from '../ranks/A.svg';
+import rankB from '../ranks/B.svg';
+import rankC from '../ranks/C.svg';
+import rankD from '../ranks/D.svg';
+import rankE from '../ranks/E.svg';
+import rankF from '../ranks/F.svg';
 import TimelineComponent from './Timeline';
 import { Card } from '@mui/material';
 
@@ -54,7 +60,13 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
             </ul>
             </div>
             </div>
-            <Typography variant="h6">Índice de Impacto Ambiental: {indiceImpactoAmbiental}</Typography>
+            <Typography variant="h6">Índice de Impacto Ambiental: </Typography>
+            <img style={{width: "64px"}} src={rankA}/>
+            <img style={{width: "64px"}} src={rankB}/>
+            <img style={{width: "64px"}} src={rankC}/>
+            <img style={{width: "64px"}} src={rankD}/>
+            <img style={{width: "64px"}} src={rankE}/>
+            <img style={{width: "64px"}} src={rankF}/>
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
