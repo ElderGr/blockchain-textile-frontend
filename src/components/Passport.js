@@ -11,17 +11,33 @@ import rankE from '../ranks/E.svg';
 import rankF from '../ranks/F.svg';
 import TimelineComponent from './Timeline';
 import { Card } from '@mui/material';
+import { useState } from 'react';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 1200,
     margin: '0 auto',
   },
-  container: {
+  containerDetails: {
+    paddingTop: "30px !important"
+  },
+  containerTimeline: {
+    paddingTop: "30px !important"
   },
   paper: {
     background: '#f5f5f5',
     padding: 16,
+  },
+  productImageInverted: {
+    transform: "rotateY(180deg) rotate(180deg)",
+    height: "60px",
+    width: "200px",
+    background: `linear-gradient(to bottom, rgba(255,255,255,0.9) 40%,
+              rgba(255,255,255,0.5)), url(${produtoImage})`,
+    backgroundSize: "cover",
+        backgroundPositionY: "bottom"
+
+
   },
   productDetailsContainer: {
     display: 'flex',
@@ -30,6 +46,14 @@ const useStyles = makeStyles({
   },
   productDetails: {
     marginLeft: '20px',
+  },
+  ranks: {
+    marginBottom: "20px",
+  },
+  index: {
+    display: "block",
+    fontWeight: "bold",
+    marginBottom: "14px"
   }
   
 });
@@ -37,18 +61,21 @@ const useStyles = makeStyles({
 const Passport = ({ productName, productColor, composition, environmentalImpact }) => {
   const classes = useStyles();
 
-  // Cálculo do índice de impacto ambiental (exemplo)
-  const indiceImpactoAmbiental = 0.5;
+  const [product, setProduct] = useState({});
+  const [productTimeline, setProductTimeline] = useState([]);
+
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <div className={classes.paper}>
+        <Grid item xs={12} sm={6} className={classes.containerDetails}>
             <Typography variant="h5">Detalhes do produto</Typography>
             <div className={classes.productDetailsContainer}>
-            <img src={produtoImage} alt="Imagem do produto" style={{ maxWidth: '200px' }} />
-            <div className={classes.productDetails}>
+              <div>
+                <img src={produtoImage} alt="Imagem do produto" style={{ maxWidth: '200px' }} />
+                <div className={classes.productImageInverted} alt="Imagem do produto" style={{ maxWidth: '200px' }} />
+              </div>
+              <div className={classes.productDetails}>
 
             <Typography><b>Produto:</b> Calça Jeans</Typography>
             <Typography><b>Cor:</b> Azul claro</Typography>
@@ -60,16 +87,21 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
             </ul>
             </div>
             </div>
-            <Typography variant="h6">Índice de Impacto Ambiental: </Typography>
-            <img style={{width: "64px"}} src={rankA}/>
-            <img style={{width: "64px"}} src={rankB}/>
-            <img style={{width: "64px"}} src={rankC}/>
-            <img style={{width: "64px"}} src={rankD}/>
-            <img style={{width: "64px"}} src={rankE}/>
-            <img style={{width: "64px"}} src={rankF}/>
-          </div>
+            <Typography variant="h5">Índice de Impacto Ambiental</Typography>
+            <div className={classes.ranks}>
+              <img style={{width: "72px"}} src={rankA}/>
+              <img style={{width: "72px"}} src={rankB}/>
+              <img style={{width: "72px"}} src={rankC}/>
+              <img style={{width: "72px"}} src={rankD}/>
+              <img style={{width: "72px"}} src={rankE}/>
+              <img style={{width: "72px"}} src={rankF}/>
+            </div>
+
+            <span style={{color: "#08ac4a"}} className={classes.index}>Produto com baixo índice de impacto ambiental</span>
+            <span style={{color: "#f3bf2e"}} className={classes.index}>Produto com médio índice de impacto ambiental</span>
+            <span style={{color: "#ca1c16"}} className={classes.index}>Produto com alto índice de impacto ambiental</span>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6}  className={classes.containerTimeline}>
           <Typography variant="h5">Jornada do produto</Typography>
           {/* <Paper className={classes.paper}>
             <ul>

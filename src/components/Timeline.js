@@ -24,7 +24,12 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         border: "2px solid",
+        height: "80vh",
 
+      },
+      timelineContainer: {
+        height: "100%",
+        overflow: "auto"
       },
     timelineContent: {
         width: '50vw',
@@ -102,6 +107,27 @@ const TimelineComponent = () => {
         description: 'Implementação de novas funcionalidades e melhorias.',
         color: colorDotItem
         
+      },
+      {
+        // time: '2024-03-31',
+        title: 'Origem da matéria prima - Fibras / Fiação',
+        description: 'Implementação de novas funcionalidades e melhorias.',
+        color: colorDotItem
+        
+      },
+      {
+        // time: '2024-03-31',
+        title: 'Origem da matéria prima - Fibras / Fiação',
+        description: 'Implementação de novas funcionalidades e melhorias.',
+        color: colorDotItem
+        
+      },
+      {
+        // time: '2024-03-31',
+        title: 'Origem da matéria prima - Fibras / Fiação',
+        description: 'Implementação de novas funcionalidades e melhorias.',
+        color: colorDotItem
+        
       }
     ];
 
@@ -115,7 +141,7 @@ const TimelineComponent = () => {
     return (
         <Timeline className={classes.timeline}>
         <span className={classes.date}>Finalizado: 03/08/2023</span>
-
+        <div className={classes.timelineContainer}>
         {data.map((item, index) => (
           <TimelineItem key={index} className={classes.timelineItem}>
             <TimelineSeparator>
@@ -131,6 +157,7 @@ const TimelineComponent = () => {
             
           </TimelineItem>
         ))}
+        </div>
         <span className={classes.date}>Inicio: 03/08/2023</span>
       </Timeline>
     );
