@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/blockchain-textile-frontend/static/css/main.0512c44b.css",
+    "main.js": "/blockchain-textile-frontend/static/js/main.01092dbc.js",
+    "static/media/produto.jpg": "/blockchain-textile-frontend/static/media/produto.e1f6fb661b1e91687ec4.jpg",
+    "static/media/B.svg": "/blockchain-textile-frontend/static/media/B.ff7bf452696b661e65d74c913948b6d3.svg",
+    "static/media/D.svg": "/blockchain-textile-frontend/static/media/D.c3369c44a895526060d5c265c2b0007d.svg",
+    "static/media/A.svg": "/blockchain-textile-frontend/static/media/A.1e578a467513f8428eea6e86361ff782.svg",
+    "static/media/C.svg": "/blockchain-textile-frontend/static/media/C.56ad08c50d82d6f86ae902cb560b4d53.svg",
+    "static/media/E.svg": "/blockchain-textile-frontend/static/media/E.2d1dd6103ee91469e4da795a6dc68b31.svg",
+    "static/media/F.svg": "/blockchain-textile-frontend/static/media/F.0c472a281d2cf52430ba653e6a71bfd0.svg",
+    "index.html": "/blockchain-textile-frontend/index.html",
+    "main.0512c44b.css.map": "/blockchain-textile-frontend/static/css/main.0512c44b.css.map",
+    "main.01092dbc.js.map": "/blockchain-textile-frontend/static/js/main.01092dbc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0512c44b.css",
+    "static/js/main.01092dbc.js"
+  ]
+}
