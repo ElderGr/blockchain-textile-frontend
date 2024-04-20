@@ -72,68 +72,34 @@ const useStyles = makeStyles({
     
   });
 
-const TimelineComponent = () => {
-  // Cria um state para estilizar a cor do dot da timeline
-  const [colorDotItem, setColorDotItem] = React.useState('gray');
-
+const TimelineComponent = (props) => {
     const data = [
       {
-        // time: '2023-11-01',
         title: 'Venda para o cliente',
         description: 'Definição dos objetivos e planejamento inicial.',
         color: "green"
       },
       {
-        // time: '2023-12-15',
         title: 'Envio para a Loja',
         description: 'Implementação das funcionalidades e testes.',
         color: "orange"
       },
       {
-        // time: '2024-01-31',
+        title: 'Testes de Qualidade',
+        description: 'Avaliação da conformidade dos produtos com os padrões de qualidade.',
+        color: "red"
+      },
+      {
         title: 'Confecção do produto',
         description: 'Disponibilização do passaporte para os usuários.',
         color: "blue"
       },
       {
-        // time: '2024-03-31',
         title: 'Origem da matéria prima - Fibras / Fiação',
         description: 'Implementação de novas funcionalidades e melhorias.',
-        color: colorDotItem
-      },
-      {
-        // time: '2024-03-31',
-        title: 'Origem da matéria prima - Fibras / Fiação',
-        description: 'Implementação de novas funcionalidades e melhorias.',
-        color: colorDotItem
-        
-      },
-      {
-        // time: '2024-03-31',
-        title: 'Origem da matéria prima - Fibras / Fiação',
-        description: 'Implementação de novas funcionalidades e melhorias.',
-        color: colorDotItem
-        
-      },
-      {
-        // time: '2024-03-31',
-        title: 'Origem da matéria prima - Fibras / Fiação',
-        description: 'Implementação de novas funcionalidades e melhorias.',
-        color: colorDotItem
-        
-      },
-      {
-        // time: '2024-03-31',
-        title: 'Origem da matéria prima - Fibras / Fiação',
-        description: 'Implementação de novas funcionalidades e melhorias.',
-        color: colorDotItem
-        
-      }
+        color: "gray"
+      },      
     ];
-
-
-
-  
 
     const classes = useStyles();
 
@@ -158,7 +124,7 @@ const TimelineComponent = () => {
           </TimelineItem>
         ))}
         </div>
-        <span className={classes.date}>Inicio: 03/08/2023</span>
+        <span className={classes.date}>Inicio: {props.manufacturingDate}</span>
       </Timeline>
     );
   };

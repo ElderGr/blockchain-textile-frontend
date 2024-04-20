@@ -11,6 +11,7 @@ import rankF from '../ranks/F.svg';
 import TimelineComponent from './Timeline';
 import { useState, useEffect } from 'react';
 import { get } from '../crud/product.crud';
+import { transformDate } from '../utils/date';
 
 const useStyles = makeStyles({
   root: {
@@ -82,7 +83,7 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
               <div className={classes.productDetails}>
 
             <Typography><b>Produto:</b> {product.name}</Typography>
-            <Typography><b>Data de Fabricação:</b> {product.manufacturingDate}</Typography>
+            <Typography><b>Data de Fabricação:</b> {transformDate(product.manufacturingDate)}</Typography>
             <Typography><b>Composição:</b></Typography>
             <ul>
             {product && product.composition && product.composition.map((element, key) => {
@@ -117,18 +118,7 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
         </Grid>
         <Grid item xs={12} sm={6}  className={classes.containerTimeline}>
           <Typography variant="h5">Jornada do produto</Typography>
-          {/* <Paper className={classes.paper}>
-            <ul>
-              <li>Início: 03/08/2023</li>
-              <li>Origem da matéria prima - Fibras/Fiação</li>
-              <li>Tecelagem</li>
-              <li>Acabamento</li>
-              <li>Confecção do produto</li>
-              <li>Envio para loja</li>
-              <li>Venda para o cliente</li>
-            </ul>
-          </Paper> */}
-          <TimelineComponent></TimelineComponent>
+          <TimelineComponent manufacturingDate={transformDate(product.manufacturingDate)}></TimelineComponent>
         </Grid>
       </Grid>
       
