@@ -58,13 +58,14 @@ const useStyles = makeStyles({
   
 });
 
-const Passport = ({ productName, productColor, composition, environmentalImpact }) => {
+const Passport = () => {
   const classes = useStyles();
 
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    get(1).then((response) => {
+    get().then((response) => {
+      if(!response.data) return
       setProduct(response.data)
     });
   }, [])
