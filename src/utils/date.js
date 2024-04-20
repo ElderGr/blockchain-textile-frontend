@@ -1,5 +1,6 @@
  
 export function transformDate(date) {
+    if(!date) return date;
     // Divide a data em ano, mês e dia
     var parts = date.split("-");
     // Reorganiza os elementos para o formato DD-MM-YYYY
