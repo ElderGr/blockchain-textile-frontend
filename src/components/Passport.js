@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import produtoImage from '../produto.jpg';
 import rankA from '../ranks/A.svg';
 import rankB from '../ranks/B.svg';
@@ -10,8 +9,8 @@ import rankD from '../ranks/D.svg';
 import rankE from '../ranks/E.svg';
 import rankF from '../ranks/F.svg';
 import TimelineComponent from './Timeline';
-import { Card } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { get } from '../crud/product.crud';
 
 const useStyles = makeStyles({
   root: {
@@ -62,7 +61,12 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
   const classes = useStyles();
 
   const [product, setProduct] = useState({});
-  const [productTimeline, setProductTimeline] = useState([]);
+
+  useEffect(() => {
+    get(1).then((response) => {
+      setProduct(response.data)
+    });
+  }, [])
 
 
   return (
@@ -77,14 +81,24 @@ const Passport = ({ productName, productColor, composition, environmentalImpact 
               </div>
               <div className={classes.productDetails}>
 
-            <Typography><b>Produto:</b> Calça Jeans</Typography>
-            <Typography><b>Cor:</b> Azul claro</Typography>
+            <Typography><b>Produto:</b> {product.name}</Typography>
+            <Typography><b>Data de Fabricação:</b> {product.manufacturingDate}</Typography>
             <Typography><b>Composição:</b></Typography>
             <ul>
-              <li>80% Polyester</li>
-              <li>10% Nylon</li>
-              <li>10% Algodão reciclável</li>
+            {product && product.composition && product.composition.map((element, key) => {
+              return <li key={key}>{element}</li>
+            }) }
             </ul>
+
+            
+            <Typography><b>Certificados:</b></Typography>
+            <ul>
+            {product && product.certificates && product.certificates.map((element, key) => {
+              return <li key={key}>{element}</li>
+            }) }
+            </ul>
+
+
             </div>
             </div>
             <Typography variant="h5">Índice de Impacto Ambiental</Typography>
