@@ -1,13 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import produtoImage from '../produto.jpg';
-import rankA from '../ranks/A.svg';
-import rankB from '../ranks/B.svg';
-import rankC from '../ranks/C.svg';
-import rankD from '../ranks/D.svg';
-import rankE from '../ranks/E.svg';
-import rankF from '../ranks/F.svg';
+import produtoImage from '../media/produto.jpg';
+import rankA from '../media/ranks/A.svg';
+import rankB from '../media/ranks/B.svg';
+import rankC from '../media/ranks/C.svg';
+import rankD from '../media/ranks/D.svg';
+import rankE from '../media/ranks/E.svg';
+import rankF from '../media/ranks/F.svg';
 import TimelineComponent from './Timeline';
 import { useState, useEffect } from 'react';
 import { get } from '../crud/product.crud';
@@ -64,6 +64,7 @@ const Passport = () => {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
+    // Captura info sobre o produto
     get().then((response) => {
       if(!response.data) return
       setProduct(response.data)
